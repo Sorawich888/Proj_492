@@ -1,0 +1,41 @@
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid #ffffff;
+  padding: 8px;
+  text-align: center;
+}
+
+.free {
+  background-color: green;
+}
+
+.busy {
+  background-color: red;
+}
+
+.urgent {
+  background-color: orange;
+}
+
+.slot-details {
+  /* Your styles here */
+  padding: 20px;
+  background-color: #282c34;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+}

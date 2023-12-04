@@ -1,0 +1,53 @@
+/* Global styles */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* App component styles */
+.App {
+  text-align: center;
+}
+
+/* Calendar table styles */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+/* Class for free time blocks */
+.free {
+  background-color: #4CAF50; /* Green */
+}
+
+/* Class for busy time blocks */
+.busy {
+  background-color: #F44336; /* Red */
+}
+
+/* Class for urgent time blocks */
+.urgent {
+  background-color: #FF9800; /* Orange */
+}
+
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+  th, td {
+    padding: 6px; /* Smaller padding */
+  }
+
+  /* You might want to hide some columns on smaller screens to make it more readable */
+  .App table th:nth-child(n+3), .App table td:nth-child(n+3) {
+    display: none;
+  }
+}
