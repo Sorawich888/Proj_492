@@ -9,7 +9,6 @@ function Calendar() {
   const times = [...Array(16)].map((_, i) => `${7 + i}.01 - ${8 + i}.00`);
 
   const handleSlotClick = (day, time) => {
-    // Implement your logic to fetch details or set state here
     const details = `Details for ${day} at ${time}`;
     setSelectedSlot({ day, time, details });
   };

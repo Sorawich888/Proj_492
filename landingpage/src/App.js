@@ -45,7 +45,7 @@ function App() {
             ))}
           </tbody>
         </table>
-        {/* Render SlotDetails component to show selected time slot details */}
+        {}
         <SlotDetails slot={selectedSlot} />
       </header>
     </div>
