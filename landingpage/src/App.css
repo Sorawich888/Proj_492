@@ -20,15 +20,15 @@ th, td {
 }
 
 .free {
-  background-color: green;
+  background-color: #008450;
 }
 
 .busy {
-  background-color: red;
+  background-color: #B81D13;
 }
 
 .urgent {
-  background-color: orange;
+  background-color: #FF7800;
 }
 
 .slot-details {
@@ -38,4 +38,28 @@ th, td {
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   margin-top: 20px;
+}
+
+/* App.css */
+/* Existing styles for larger screens */
+
+@media (max-width: 768px) {
+  /* Styles for screens with a maximum width of 768px (adjust as needed) */
+  /* Add mobile-specific styles here */
+}
+
+/* App.css or AppMobile.css */
+table {
+  width: 100%;
+  overflow-x: auto;
+}
+
+/* App.css or AppMobile.css */
+@media (max-width: 768px) {
+  /* Adjust font sizes and spacing for smaller screens */
+  body {
+    font-size: 14px;
+  }
+
+  /* Add other styles as needed */
 }

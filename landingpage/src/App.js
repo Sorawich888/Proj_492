@@ -1,7 +1,9 @@
+// App.js
 import React, { useState } from 'react';
 import './App.css';
-import TimeSlot from './TimeSlot'; //separate TimeSlot component
-import SlotDetails from './SlotDetails'; //separate SlotDetails component
+import TimeSlot from './TimeSlot';
+import SlotDetails from './SlotDetails';
+import MonthDropdown from './MonthDropdown';
 
 function App() {
   const [selectedSlot, setSelectedSlot] = useState(null);
@@ -12,7 +14,6 @@ function App() {
   const getRandomStatus = () => statuses[Math.floor(Math.random() * statuses.length)];
 
   const handleSlotClick = (day, time) => {
-    //called when a time slot is clicked
     const details = `Details for ${day} at ${time}`;
     setSelectedSlot({ day, time, details });
   };
@@ -20,32 +21,37 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <div>{/* Nav control, TBA */}</div>
-        <table>
-          <thead>
-            <tr>
-              {days.map(day => (
-                <th key={day}>{day}</th>
-              ))}
-            </tr>
-          </thead>
-          <tbody>
-            {hours.map(hour => (
-              <tr key={hour}>
+        <div>
+          <MonthDropdown />
+        </div>
+        <div className="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th></th>
                 {days.map(day => (
-                  <TimeSlot 
-                    key={day} 
-                    day={day} 
-                    time={hour} 
-                    status={getRandomStatus()} 
-                    onSelect={handleSlotClick}
-                  />
+                  <th key={day}>{day}</th>
                 ))}
               </tr>
-            ))}
-          </tbody>
-        </table>
-        {}
+            </thead>
+            <tbody>
+              {hours.map(hour => (
+                <tr key={hour}>
+                  <td>{hour}</td>
+                  {days.map(day => (
+                    <TimeSlot
+                      key={`${day}-${hour}`}
+                      day={day}
+                      time={hour}
+                      status={getRandomStatus()}
+                      onSelect={handleSlotClick}
+                    />
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
         <SlotDetails slot={selectedSlot} />
       </header>
     </div>

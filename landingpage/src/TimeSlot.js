@@ -1,17 +1,33 @@
-// TimeSlot.js
-import React from 'react';
+import React, { useState } from 'react';
+import PopupDetails from './PopupDetails';
+import './TimeSlot.css';
+
 
 const TimeSlot = ({ day, time, status, onSelect }) => {
-  // Define the click handler that calls onSelect with the relevant details
-  const handleClick = () => {
-    onSelect(day, time, status);
+  const [showPopup, setShowPopup] = useState(false);
+
+  const handleSlotClick = () => {
+    onSelect(day, time);
+    setShowPopup(true);
   };
 
-  // Return the JSX for the time slot element, including event handlers and styling
+  const closePopup = () => {
+    setShowPopup(false);
+  };
+
   return (
-    <td className={`time-slot ${status}`} onClick={handleClick}>
-      {time}
-    </td>
+    <div className={`timeslot ${status}`} onClick={handleSlotClick}>
+      <p className="day">{day}</p>
+      <p>{time}</p>
+      {showPopup && (
+        <PopupDetails
+          trainPassed="ABC123"
+          avgWaitingTime="5 minutes"
+          events="Event 1, Event 2"
+          onClose={closePopup}
+        />
+      )}
+    </div>
   );
 };
 

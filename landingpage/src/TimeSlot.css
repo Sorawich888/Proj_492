@@ -1,0 +1,23 @@
+/* TimeSlot.css */
+.timeslot {
+    border: 1px solid #ccc;
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .day {
+    font-weight: bold;
+  }
+  
+  .free {
+    background-color: #aaffaa; /* Green background for 'free' status */
+  }
+  
+  busy {
+    background-color: #ffaaaa; /* Red background for 'busy' status */
+  }
+  
+  urgent {
+    background-color: #ffccaa; /* Orange background for 'urgent' status */
+  }
+  

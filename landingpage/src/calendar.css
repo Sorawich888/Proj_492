@@ -1,0 +1,16 @@
+/* Calendar.css */
+.calendar-container {
+    width: 100%;
+    max-width: 600px; /* Adjust max-width based on your design */
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .calendar-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  /* Add any other responsive styles as needed */
+  

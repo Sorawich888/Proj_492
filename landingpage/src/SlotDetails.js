@@ -1,4 +1,3 @@
-// SlotDetails.js
 import React from 'react';
 
 const SlotDetails = ({ slot }) => {
@@ -15,7 +14,6 @@ const SlotDetails = ({ slot }) => {
       <p><strong>Day:</strong> {slot.day}</p>
       <p><strong>Time:</strong> {slot.time}</p>
       <p><strong>Status:</strong> {slot.status}</p>
-      {/* Add more details here as needed */}
     </div>
   );
 };
