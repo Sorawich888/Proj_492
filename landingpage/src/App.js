@@ -5,6 +5,7 @@ import TimeSlot from './TimeSlot';
 import SlotDetails from './SlotDetails';
 import MonthDropdown from './MonthDropdown';
 
+
 function App() {
   const [selectedSlot, setSelectedSlot] = useState(null);
   const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
@@ -17,10 +18,11 @@ function App() {
     const details = `Details for ${day} at ${time}`;
     setSelectedSlot({ day, time, details });
   };
-
+console.log(days);
   return (
     <div className="App">
       <header className="App-header">
+        <div>{/* Nav control, TBA */}</div>
         <div>
           <MonthDropdown />
         </div>
@@ -39,6 +41,7 @@ function App() {
                 <tr key={hour}>
                   <td>{hour}</td>
                   {days.map(day => (
+                    <td style={{border:"0px"}}>
                     <TimeSlot
                       key={`${day}-${hour}`}
                       day={day}
@@ -46,6 +49,7 @@ function App() {
                       status={getRandomStatus()}
                       onSelect={handleSlotClick}
                     />
+                    </td>
                   ))}
                 </tr>
               ))}
@@ -54,6 +58,7 @@ function App() {
         </div>
         <SlotDetails slot={selectedSlot} />
       </header>
+
     </div>
   );
 }

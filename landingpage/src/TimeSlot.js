@@ -19,6 +19,7 @@ const TimeSlot = ({ day, time, status, onSelect }) => {
     <div className={`timeslot ${status}`} onClick={handleSlotClick}>
       <p className="day">{day}</p>
       <p>{time}</p>
+      <div></div>
       {showPopup && (
         <PopupDetails
           trainPassed="ABC123"

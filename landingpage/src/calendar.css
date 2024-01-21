@@ -14,3 +14,12 @@
   
   /* Add any other responsive styles as needed */
   
+/* Your mobile-specific styles go here */
+@media only screen and (max-width: 600px) {
+  /* Styles for devices with a maximum width of 600 pixels (e.g., mobile phones) */
+  body {
+    font-size: 14px;
+  }
+
+  /* Add more mobile-specific styles as needed */
+}

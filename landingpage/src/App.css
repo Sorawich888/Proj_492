@@ -54,12 +54,13 @@ table {
   overflow-x: auto;
 }
 
-/* App.css or AppMobile.css */
-@media (max-width: 768px) {
-  /* Adjust font sizes and spacing for smaller screens */
+
+/* Your mobile-specific styles go here */
+@media only screen and (max-width: 600px) {
+  /* Styles for devices with a maximum width of 600 pixels (e.g., mobile phones) */
   body {
     font-size: 14px;
   }
 
-  /* Add other styles as needed */
+  /* Add more mobile-specific styles as needed */
 }
