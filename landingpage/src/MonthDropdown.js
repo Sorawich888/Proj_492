@@ -12,9 +12,9 @@ const MonthDropdown = () => {
       <label htmlFor="monthRange">Select Month Range: </label>
       <select id="monthRange" value={selectedRange} onChange={handleRangeChange}>
         <option value="">Select Range</option>
-        <option value="June-October">June - October</option>
-        <option value="November-March">November - March</option>
-        <option value="April-May">April - May</option>
+        <option value="June-October">1st Semester</option>
+        <option value="November-March">2nd Semester</option>
+        <option value="April-May">Summer Semester</option>
       </select>
 
       {selectedRange && (

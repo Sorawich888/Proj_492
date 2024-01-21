@@ -1,24 +1,27 @@
 // App.js
 import React, { useState } from 'react';
 import './App.css';
-import TimeSlot from './TimeSlot';
 import SlotDetails from './SlotDetails';
+import './calendar.css';
 import MonthDropdown from './MonthDropdown';
+import TimeSlot from './TimeSlot'; // Import the TimeSlot component
 
+const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+const hours = [...Array(16)].map((_, i) => `${i + 7}.01 - ${i + 8}.00`);
+
+const getRandomStatus = () => {
+  const statuses = ['free', 'busy', 'urgent'];
+  return statuses[Math.floor(Math.random() * statuses.length)];
+};
 
 function App() {
   const [selectedSlot, setSelectedSlot] = useState(null);
-  const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-  const hours = [...Array(16)].map((_, i) => `${i + 7}.01 - ${i + 8}.00`);
-  const statuses = ['free', 'busy', 'urgent'];
-
-  const getRandomStatus = () => statuses[Math.floor(Math.random() * statuses.length)];
 
   const handleSlotClick = (day, time) => {
     const details = `Details for ${day} at ${time}`;
     setSelectedSlot({ day, time, details });
   };
-console.log(days);
+
   return (
     <div className="App">
       <header className="App-header">
@@ -41,14 +44,13 @@ console.log(days);
                 <tr key={hour}>
                   <td>{hour}</td>
                   {days.map(day => (
-                    <td style={{border:"0px"}}>
-                    <TimeSlot
-                      key={`${day}-${hour}`}
-                      day={day}
-                      time={hour}
-                      status={getRandomStatus()}
-                      onSelect={handleSlotClick}
-                    />
+                    <td style={{ border: "0px" }} key={`${day}-${hour}`}>
+                      <TimeSlot
+                        day={day}
+                        time={hour}
+                        status={getRandomStatus()}
+                        onSelect={handleSlotClick}
+                      />
                     </td>
                   ))}
                 </tr>
@@ -58,7 +60,6 @@ console.log(days);
         </div>
         <SlotDetails slot={selectedSlot} />
       </header>
-
     </div>
   );
 }
